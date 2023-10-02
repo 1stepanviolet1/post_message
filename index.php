@@ -1,6 +1,6 @@
 <?php // vars ---
 
-$title = "Hi, php :)";
+$title = "Posting messages :)";
 
 
 // !vars ---
