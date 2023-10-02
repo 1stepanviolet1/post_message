@@ -1,6 +1,6 @@
 import os
 
-filename = os.path.join('/', 'var', 'www', 'post_msg', 'messages.html')
+filename = os.path.join('/', 'var', 'www', 'messages.html')
 
 
 def write_msg(data: dict) -> None:
@@ -14,7 +14,7 @@ def write_msg(data: dict) -> None:
 
     lines.append("<br>\n")
 
-    lines.append(f"<em>Message:</em> <br>\n")
+    lines.append(f"<b><em>Message:</em></b> <br>\n")
     lines.append(f"{data['msg']} <br>\n")
 
     lines.append("</p>\n")
