@@ -1,6 +1,6 @@
 import os
 
-filename = os.path.join('.', 'messages.html')
+filename = os.path.join('/', 'var', 'www', 'post_msg', 'messages.html')
 
 
 def write_msg(data: dict) -> None:
@@ -28,19 +28,23 @@ def main():
     data = (el.split(':') for el in input().split(';', 2))
     data = {key: val for key, val in data}
 
-    try:
-        write_msg(data)
-    except KeyError:
-        exit(321)
-    else:
-        exit(0)
+    write_msg(data)
+    
 
 if __name__ == "__main__":
-    main()
     try:
-        print()
+        main()
+    except KeyError:
+        print("Oups..")
+        print("Invalid data")
     except PermissionError:
-        exit(111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111)
+        print("Sorry :(")
+        print("Permission denied..")
     except BaseException:
-        exit(123)
+        print("Ouuu...")
+        print("I don't know this error :(")
+        print("Connect to developer")
+    else:
+        print("Success :)")
+        print("You message posted!")
 

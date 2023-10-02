@@ -14,9 +14,8 @@ $title = 'Results';
 $data_of_msg = 'name:'.$_POST['name'].';'
 			   .'email:'.$_POST['email'].';'
 			   .'msg:'.$_POST['msg'];
-$cmd = 'echo "'.$data_of_msg.'" | python3 -u /var/www/post_msg/`write_new_msg.py';
+$cmd = 'echo "'.$data_of_msg.'" | python3 -u /var/www/post_msg/write_new_msg.py';
 
-echo $data_of_msg."<br>";
 
 exec(
 	$cmd,
@@ -25,11 +24,18 @@ exec(
 );
 
 
-//echo "<h1>".$output[0]."</h1> <br>";
+echo "<br>";
 
-//for ($i = 1; i < count($output); ++$i)
-//	echo "<h3>".$output[i]."</h3> <br>";
-echo $exitcode;
+echo "<div class=\"mx-4\">";
+echo "<h1>".$output[0]."</h1> <br>";
+echo "</div>";
+
+for ($i = 1; $i < count($output); ++$i)
+	echo "<h3>".$output[$i]."</h3> <br>";
+
+echo "<div class=\"mx-4\">";
+require_once "./return_to_main_page_btn.html";
+echo "</div>";
 
 // !main ---
 ?>
